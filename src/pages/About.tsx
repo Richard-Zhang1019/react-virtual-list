@@ -2,6 +2,7 @@ import { Box, Flex, keyframes } from '@chakra-ui/react'
 import { FaReact } from 'react-icons/fa'
 
 import { useAppSelector } from '@/store'
+import VirtualList from '@/components/VirtualList'
 
 const About = () => {
   const { value } = useAppSelector(state => state.count)
@@ -10,6 +11,7 @@ const About = () => {
     from { transform: rotate(0deg) }
     to { transform: rotate(360deg) }
   `
+  const list = new Array(10000).fill(1).map((_, index) => index)
 
   return (
     <Flex justify="center" align="center" direction="column" gap={10}>
@@ -18,6 +20,10 @@ const About = () => {
       </Box>
       <h1>Yu-React-template</h1>
       <Box>redux count: {value}</Box>
+
+      <Box w={300} border='1px solid black'>
+        <VirtualList list={list} />
+      </Box>
     </Flex>
   )
 }
