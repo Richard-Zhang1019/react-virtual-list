@@ -2,7 +2,7 @@ import { Box, Flex, keyframes } from '@chakra-ui/react'
 import { FaReact } from 'react-icons/fa'
 
 import { useAppSelector } from '@/store'
-import VirtualList from '@/components/VirtualList'
+import VirtualList from '@/components/VirtualList2'
 
 const About = () => {
   const { value } = useAppSelector(state => state.count)
