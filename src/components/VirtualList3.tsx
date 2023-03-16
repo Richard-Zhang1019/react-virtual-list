@@ -7,7 +7,7 @@ interface VirtualListProps {
   containerHeight?: number
 }
 
-// 每一项高度固定的虚拟列表
+// item高度不固定的虚拟列表
 const VirtualList: FC<VirtualListProps> = ({
   list,
   itemHeight = 50,
@@ -59,7 +59,7 @@ const VirtualList: FC<VirtualListProps> = ({
           setScrollTop(e.currentTarget.scrollTop)
         })
       }}
-    >
+    > 
       <div style={{ height: contentHeight }}>{renderList}</div>
     </div>
   )
